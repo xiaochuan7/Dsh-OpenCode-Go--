@@ -35,7 +35,7 @@
 
 > 为 DeepSeek Harness 项目添加「OpenCode Go 套餐额度」显示：在聊天输入框的上下文占比圆环（ContextMeter 面板）顶部显示额度区块。
 >
-> 参考实现见仓库 Opencode-Go-（如可用）：
+> 参考实现见仓库 Dsh-OpenCode-Go-（如可用）：
 > - `packages/client/ui-conversation/src/client/skeleton/ContextMeter.tsx` — 前端组件改动
 > - `packages/client/ui-conversation/src/client/skeleton/ContextMeter.module.css` — 样式
 > - `server/opencode-quota-route.mjs` — 服务端路由 `GET /api/opencode-quota` 参考实现
