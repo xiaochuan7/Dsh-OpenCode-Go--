@@ -10,24 +10,19 @@
 - 只在当前 LLM 网关是 OpenCode Go 时显示；切到 DeepSeek 官网等其他网关时自动隐藏，保持官方原样
 - 前端与后端解耦：路由缺失或不可用时不影响原有上下文占比功能
 
-## 目录结构
+## 效果展示
 
-| 文件 | 说明 |
-|---|---|
-| `packages/client/ui-conversation/src/client/skeleton/ContextMeter.tsx` | 前端组件改动（额度区块渲染 + 轮询） |
-| `packages/client/ui-conversation/src/client/skeleton/ContextMeter.module.css` | 额度区块样式 |
-| `server/opencode-quota-route.mjs` | 服务端路由参考实现（`GET /api/opencode-quota`） |
-| `server/cordis.patch.yml` | 路由插件的挂载配置示例 |
+点输入框上方的上下文占比圆环，面板顶部即显示额度：
 
-## 方式一：手动安装（版本差异大，不推荐）
+<img width="1323" height="617" alt="image" src="https://github.com/user-attachments/assets/1af5b04a-85ae-4ec4-83a1-b0cc6dab0fb3" />
 
-1. 把两个前端文件按原路径覆盖到你的 deepseek-harness 源码：
-   `packages/client/ui-conversation/src/client/skeleton/`
-2. 重新构建前端产物（`pnpm build` 或项目对应的打包命令）
-3. 把 `server/opencode-quota-route.mjs` 放到你的用户 patch 目录（默认 `~/.dsh/profiles/web/`），并参照 `server/cordis.patch.yml` 在 `cordis.patch.yml` 里挂载
-4. 确认 `settings.yaml` 中 LLM 网关 `baseURL` 指向 OpenCode Go（如 `https://opencode.ai/zen/go/v1`），并配置 API key 环境变量（`OPENCODE_GO_API_KEY` 或 `DEEPSEEK_API_KEY`）
+面板细节：
 
-## 方式二：让 AI Agent 自动适配（推荐）
+<img width="488" height="476" alt="image" src="https://github.com/user-attachments/assets/e38b641a-cc70-4036-b1c3-31fd35e7f92b" />
+
+> 以上为真实截图，数值来自当前 OpenCode Go 账户的真实配额。
+
+## 方式一：让 AI Agent 自动适配（推荐）
 
 把下面这段提示词发给你的编码 Agent（DSH、Claude Code、Cursor、Gemini CLI 等），它会根据你本地的实际版本自动完成改动，**不需要手动替换文件**：
 
@@ -57,24 +52,22 @@
 
 ---
 
-## 效果预览
-<img width="1323" height="617" alt="image" src="https://github.com/user-attachments/assets/1af5b04a-85ae-4ec4-83a1-b0cc6dab0fb3" />
+## 方式二：手动安装（版本差异大，不推荐）
 
+1. 把两个前端文件按原路径覆盖到你的 deepseek-harness 源码：
+   `packages/client/ui-conversation/src/client/skeleton/`
+2. 重新构建前端产物（`pnpm build` 或项目对应的打包命令）
+3. 把 `server/opencode-quota-route.mjs` 放到你的用户 patch 目录（默认 `~/.dsh/profiles/web/`），并参照 `server/cordis.patch.yml` 在 `cordis.patch.yml` 里挂载
+4. 确认 `settings.yaml` 中 LLM 网关 `baseURL` 指向 OpenCode Go（如 `https://opencode.ai/zen/go/v1`），并配置 API key 环境变量（`OPENCODE_GO_API_KEY` 或 `DEEPSEEK_API_KEY`）
 
-<img width="488" height="476" alt="image" src="https://github.com/user-attachments/assets/e38b641a-cc70-4036-b1c3-31fd35e7f92b" />
+## 目录结构
 
-点输入框上方的上下文占比圆环后，面板顶部：
-
-```
-OpenCode Go 额度
-月限额  ▓▓▓▓░░░░░░  剩 86%  08-01 重置
-周限额  ▓▓▓▓▓▓▓░░░  剩 72%  07-21 重置
-五小时  ▓▓░░░░░░░░  剩 94%  07-14 15:30 重置
-────────────────────────────
-9% of context used ...
-```
-
-> 以上为示意，具体数值来自你的 OpenCode Go 账户真实配额。
+| 文件 | 说明 |
+|---|---|
+| `packages/client/ui-conversation/src/client/skeleton/ContextMeter.tsx` | 前端组件改动（额度区块渲染 + 轮询） |
+| `packages/client/ui-conversation/src/client/skeleton/ContextMeter.module.css` | 额度区块样式 |
+| `server/opencode-quota-route.mjs` | 服务端路由参考实现（`GET /api/opencode-quota`） |
+| `server/cordis.patch.yml` | 路由插件的挂载配置示例 |
 
 ---
 
