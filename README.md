@@ -1,5 +1,7 @@
 # OpenCode Go 额度显示（DeepSeek Harness）
 
+> 面向 DeepSeek Harness 的社区插件，按官方 [`dsh-plugin`](https://github.com/topics/dsh-plugin) 话题收录，可配合任何编码 Agent 自动安装适配。
+
 在 DeepSeek Harness 聊天界面中，为内置的「上下文占比」圆环面板（ContextMeter）添加 **OpenCode Go 套餐额度** 显示：
 
 - 面板顶部显示 **月限额 / 周限额 / 五小时**（滚动窗口）三项
@@ -70,3 +72,9 @@ OpenCode Go 额度
 ```
 
 > 以上为示意，具体数值来自你的 OpenCode Go 账户真实配额。
+
+---
+
+本插件为 DeepSeek Harness 社区插件，已按官方规范标记 [`dsh-plugin`](https://github.com/topics/dsh-plugin) 话题（GitHub 仓库 Topics 中可查），并附官方 "powered by dsh" 徽章：
+
+[![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
