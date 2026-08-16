@@ -58,6 +58,8 @@
 ---
 
 ## 效果预览
+<img width="1222" height="372" alt="image" src="https://github.com/user-attachments/assets/ac91b7f7-acba-450e-b4f6-e805a9f80fcf" />
+
 <img width="488" height="476" alt="image" src="https://github.com/user-attachments/assets/e38b641a-cc70-4036-b1c3-31fd35e7f92b" />
 
 点输入框上方的上下文占比圆环后，面板顶部：
