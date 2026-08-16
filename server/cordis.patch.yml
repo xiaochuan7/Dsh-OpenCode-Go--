@@ -1,0 +1,5 @@
+# 挂载示例：把本文件合并到你的用户 patch（默认 ~/.dsh/profiles/web/cordis.patch.yml）。
+# opencode-quota-route.mjs 需与 patch 同目录（放在 profiles/web/ 下）。
+# 保存后 cordis 会热应用该插件，无需重启服务。
+- id: opencode-quota-route
+  name: './opencode-quota-route.mjs'
