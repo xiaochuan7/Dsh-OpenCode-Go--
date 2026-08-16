@@ -58,7 +58,8 @@
 ---
 
 ## 效果预览
-<img width="1222" height="372" alt="image" src="https://github.com/user-attachments/assets/ac91b7f7-acba-450e-b4f6-e805a9f80fcf" />
+<img width="1323" height="617" alt="image" src="https://github.com/user-attachments/assets/1af5b04a-85ae-4ec4-83a1-b0cc6dab0fb3" />
+
 
 <img width="488" height="476" alt="image" src="https://github.com/user-attachments/assets/e38b641a-cc70-4036-b1c3-31fd35e7f92b" />
 
